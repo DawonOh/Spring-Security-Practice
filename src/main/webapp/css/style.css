@@ -1,0 +1,58 @@
+@charset "UTF-8";
+#flexContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 1024px;
+    height: 300px;
+    margin: 20px auto;
+}
+
+input {
+    width: 250px;
+    height: 35px;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-indent: 7px;
+}
+
+
+#loginword {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#submitbtn{
+    border-radius: 20px;
+    background-color: #181735;
+    color: #fff;
+}
+
+#join{
+    font-size: 0.83em;
+    color: #818181;
+    text-decoration: none;
+}
+
+.alink{
+    font-size: 0.83em;
+    color: #818181;
+    text-decoration: none;
+}
+#links{
+    display: flex;
+    justify-content: space-evenly;
+}

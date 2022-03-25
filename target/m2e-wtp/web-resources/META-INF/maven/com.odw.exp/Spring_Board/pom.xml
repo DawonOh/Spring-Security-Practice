@@ -1,0 +1,174 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.odw.exp</groupId>
+  <artifactId>Spring_Board</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Spring_Board Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+  	<org.springframework-version>5.2.19.RELEASE</org.springframework-version>
+  	<org.aspectj-version>1.9.6</org.aspectj-version>
+  	<org.springframework.security>5.3.13.RELEASE</org.springframework.security>
+  </properties>
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- Spring Framework를 사용하기 위한 core와 context -->
+	<dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-core</artifactId>
+    	<version>${org.springframework-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<!-- Spring mvc 프로젝트를 하기 위한 기본적인 dependency -->
+	<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+	
+	<!-- AOP사용을 위한 aspectjrt(runtime), aspectweaver -->
+	
+	<dependency>
+	    <groupId>org.aspectj</groupId>
+	    <artifactId>aspectjweaver</artifactId>
+	    <version>${org.aspectj-version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.aspectj</groupId>
+	    <artifactId>aspectjrt</artifactId>
+	    <version>${org.aspectj-version}</version>
+	</dependency>
+	
+	<!-- 로그 사용을 위한 slf4j -->
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-api</artifactId>
+	    <version>1.7.25</version>
+	</dependency>
+	
+	<!-- servlet/jsp , jstl에 관한 servlet-api, jsp-api, jstl -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>3.1.0</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>javax.servlet.jsp</groupId>
+	    <artifactId>javax.servlet.jsp-api</artifactId>
+	    <version>2.3.3</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>jstl</artifactId>
+		<version>1.2</version>
+	</dependency>
+	
+	<!-- 문자열 처리를 위한 commons-lang3 -->
+	<dependency>
+	    <groupId>org.apache.commons</groupId>
+	    <artifactId>commons-lang3</artifactId>
+	    <version>3.12.0</version>
+	</dependency>
+	
+	<!-- Spring에서 MyBatis를 사용하기 위한 mybatis -->
+	<dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis</artifactId>
+	    <version>3.5.6</version>
+	</dependency>
+	
+	<!-- oracle의 ojdbc10 -->
+	<dependency>
+	    <groupId>com.oracle.database.jdbc</groupId>
+	    <artifactId>ojdbc10</artifactId>
+	    <version>19.12.0.0</version>
+	</dependency>
+	
+	<!-- SqlSessionFactory bean이 되도록 해주는 mybatis-spring -->
+	<dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis-spring</artifactId>
+	    <version>2.0.6</version>
+	</dependency>
+	
+	<!-- 객체가 테이블이 되도록 매핑해주는 프레임워크 spring-orm(Spring Object/Relation Mapping) -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-orm</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<!-- JDBC를 더 효율적으로 사용할 수 있게 해주는 dbcp(Database Connection Pool) -->
+	<dependency>
+	    <groupId>org.apache.commons</groupId>
+	    <artifactId>commons-dbcp2</artifactId>
+	    <version>2.1.1</version>
+	</dependency>
+	
+	<!-- Spring Security 사용을 위한 spring security core -->
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-core</artifactId>
+	    <version>${org.springframework.security}</version>
+	</dependency>
+	
+	<!-- spring security web -->
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-web</artifactId>
+	    <version>${org.springframework.security}</version>
+	</dependency>
+	
+	<!-- spring security config -->
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-config</artifactId>
+	    <version>${org.springframework.security}</version>
+	</dependency>
+	
+	<!-- spring security taglibs -->
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-taglibs</artifactId>
+	    <version>${org.springframework.security}</version>
+	</dependency>
+	
+	
+	
+	
+    
+  </dependencies>
+  <build>
+    <finalName>Spring_Board</finalName>
+    <plugins>
+    	<plugin>
+    		<groupId>org.apache.maven.plugins</groupId>
+    		<artifactId>maven-compiler-plugin</artifactId>
+    		<version>3.8.0</version>
+    		<configuration>
+    			<source>11</source>
+    			<target>11</target>
+    		</configuration>
+    	</plugin>
+    </plugins>
+  </build>
+</project>

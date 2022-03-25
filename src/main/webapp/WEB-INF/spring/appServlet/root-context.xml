@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
+
+	<!-- 외부 프로퍼티 파일을 로딩하도록 설정 -->
+	<context:property-placeholder location="classpath:properties/db.properties"/> 
+
+	<bean id="basicDataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="driverClassName" value="${driver}"/>
+		<property name="url" value="${url}"/>
+		<property name="username" value="${user}"/>
+		<property name="password" value="${pw}"/>
+	</bean>
+	
+	<!-- DataSource를 참조하여 MyBatis와 oracle 서버를 연동 -->
+	<!-- configLocation : 기타 추가 설정  -->
+	<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="basicDataSource"/>
+		<property name="configLocation" value="classpath:database/configuration.xml"></property>
+	</bean>
+	
+	<!-- SqlSession을 구현하고 코드에서 SqlSession을 대체한다 -->
+	<!-- constructor-arg : 생성자 주입, 다른 bean을 참조할 때는 ref 사용 -->
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactoryBean"/>
+	</bean>
+</beans>
