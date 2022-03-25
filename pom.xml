@@ -152,10 +152,6 @@
 	    <version>${org.springframework.security}</version>
 	</dependency>
 	
-	
-	
-	
-    
   </dependencies>
   <build>
     <finalName>Spring_Board</finalName>
